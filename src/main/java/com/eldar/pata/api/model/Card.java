@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.json.simple.JSONObject;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
 import java.util.Calendar;
@@ -38,7 +39,7 @@ public class Card {
 
     public Card(String holder, String brand, String expirationDate) {
 
-        if (holder == null || holder.isBlank() || brand.isBlank()) {
+        if (StringUtils.isBlank(holder) || StringUtils.isBlank(brand)) {
             throw new IllegalArgumentException("Card holder, card brand and card expiration date must not be null or empty");
         }
 
