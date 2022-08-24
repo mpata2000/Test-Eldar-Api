@@ -104,7 +104,7 @@ public class Card {
     }
 
     public boolean validOperation(int operationAmount) {
-        return !this.isExpired() && operationAmount < 1000;
+        return !this.isExpired() && operationAmount < 1000 && operationAmount > 0;
     }
 
     public String operation(int operationAmount) {
